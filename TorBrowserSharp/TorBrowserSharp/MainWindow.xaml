@@ -1,0 +1,27 @@
+﻿<Window x:Class="TorBrowserSharp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TorBrowserSharp"
+        xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        mc:Ignorable="d"
+        Title="TorBrowserSharp" Height="450" Width="800" Closing="Window_Closing">
+    <Grid>
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar>
+                    <Button Content="Anonymize" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Anonymize_Click" />
+                    <TextBox x:Name="UrlTextbox" Width="349" Text="{Binding ElementName=Browser, Path=Address}" />
+                    <Button Content="Go" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Go_Click" />
+                    <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Back_Click" IsEnabled="{Binding ElementName=Browser, Path=CanGoBack}" />
+                    <Button Content="Forward" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Forward_Click" IsEnabled="{Binding ElementName=Browser, Path=CanGoForward}" />
+                </ToolBar>
+            </ToolBarTray>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+        <Border BorderBrush="Gray" BorderThickness="0,1" Margin="0,30,0,0">
+            <wpf:ChromiumWebBrowser x:Name="Browser" Address="www.duckduckgo.com" Initialized="Browser_Initialized"/>
+        </Border>
+    </Grid>
+</Window>
