@@ -104,5 +104,13 @@ namespace TorBrowserSharp
         {
             Proxy?.Stop();
         }
+
+        private void UrlTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Browser.Load(UrlTextbox.Text);
+            }
+        }
     }
 }

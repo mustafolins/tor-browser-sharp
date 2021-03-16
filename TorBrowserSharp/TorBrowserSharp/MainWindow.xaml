@@ -12,7 +12,7 @@
             <ToolBarTray DockPanel.Dock="Top">
                 <ToolBar>
                     <Button Content="Anonymize" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Anonymize_Click" />
-                    <TextBox x:Name="UrlTextbox" Width="349" Text="{Binding ElementName=Browser, Path=Address}" />
+                    <TextBox x:Name="UrlTextbox" Width="349" Text="{Binding ElementName=Browser, Path=Address}" KeyDown="UrlTextbox_KeyDown" />
                     <Button Content="Go" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Go_Click" />
                     <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Back_Click" IsEnabled="{Binding ElementName=Browser, Path=CanGoBack}" />
                     <Button Content="Forward" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Forward_Click" IsEnabled="{Binding ElementName=Browser, Path=CanGoForward}" />

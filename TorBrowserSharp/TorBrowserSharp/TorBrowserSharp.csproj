@@ -11,6 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Components\**" />
+    <EmbeddedResource Remove="Components\**" />
+    <None Remove="Components\**" />
+    <Page Remove="Components\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CefSharp.Wpf" Version="88.2.90" />
     <PackageReference Include="Knapcode.TorSharp" Version="2.6.0" />
   </ItemGroup>
